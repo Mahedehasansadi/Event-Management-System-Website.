@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{font-family: verdana;}
+  
+  header{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+  }
+  
+  .text{
+      position: absolute;
+      line-height: 1.5;
+      text-align: center;
+  }
+  
+  .overlay{
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: transparent;
+      opacity: 0.7;
+  }
+ h1{
+    font-size: 10em;
+    color:#252839;
+    -webkit-text-stroke: 0.2vw wheat;
+    text-transform: uppercase;
+}
+
+ h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: burlywood;
+    -webkit-text-stroke: 0vw wheat;
+    border-right: 3px solid burlywood;
+    overflow: hidden;
+    animation: animate 10s linear infinite;
+}
+a {
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: inherit;
+}
+  @keyframes animate
+  {
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+  }
